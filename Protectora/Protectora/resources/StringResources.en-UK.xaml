@@ -1,0 +1,131 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Protectora.resources"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="lblTituloLogin">Login</sys:String>
+    <sys:String x:Key="lblUsuario">User</sys:String>
+    <sys:String x:Key="lblContrasena">Password</sys:String>
+    <sys:String x:Key="btnLogin">Login</sys:String>
+    <sys:String x:Key="lblOlvido">Forgot your password?</sys:String>
+    <sys:String x:Key="cbiEspaniol">SP</sys:String>
+    <sys:String x:Key="cbiIngles">ENG-UK</sys:String>
+    <sys:String x:Key="Gracias">Thanks for using our application...</sys:String>
+    <sys:String x:Key="Despedida">Goodbay</sys:String>
+    <sys:String x:Key="lblRecordar">Remember me</sys:String>
+    <sys:String x:Key="lblIncorrecto">Incorrect user or password</sys:String>
+    <sys:String x:Key="lblCambiarUsuario">Change user account</sys:String>
+
+
+
+    <sys:String x:Key="tooltipIdioma">Select a language for the menu</sys:String>
+    <sys:String x:Key="tooltipbtnLogin">Button to log in with the selected user</sys:String>
+    <sys:String x:Key="toolContrasena">press to show / hide password</sys:String>
+    <sys:String x:Key="toolRecordar">press to remember user and password</sys:String>
+
+    <sys:String x:Key="toolAñadir">Allows you to add new items</sys:String>
+    <sys:String x:Key="toolEliminar">Allows you to delete items</sys:String>
+    <sys:String x:Key="toolEditar">Allows you to edit items</sys:String>
+    <sys:String x:Key="toolPadrino">Show sponsor information</sys:String>
+    <sys:String x:Key="toolAjustes">Show application settings (disabled)</sys:String>
+    <sys:String x:Key="toolAyuda">Displays help information</sys:String>
+    <sys:String x:Key="toolSalir">Press to exit the application</sys:String>
+
+
+
+
+
+    <sys:String x:Key="lblNombre">Name</sys:String>
+    <sys:String x:Key="lblApellido">Surname</sys:String>
+    <sys:String x:Key="lblContacto">Contact</sys:String>
+    <sys:String x:Key="lblAcceso">Last access</sys:String>
+
+    <sys:String x:Key="btnSalir">Exit</sys:String>
+    <sys:String x:Key="tPerros">Dogs</sys:String>
+    <sys:String x:Key="tVoluntarios">Volunteers</sys:String>
+    <sys:String x:Key="lblAnadir">Add volunteer</sys:String>
+    <sys:String x:Key="lblEliminar">Delete volunteer</sys:String>
+    <sys:String x:Key="lblModificar">Edit volunteer</sys:String>
+    <sys:String x:Key="txtBuscar">Search by name</sys:String>
+
+    <sys:String x:Key="lblCorreo">Email</sys:String>
+    <sys:String x:Key="lblTlf">Phone</sys:String>
+    <sys:String x:Key="lblHorario">schedule</sys:String>
+    <sys:String x:Key="lblImagen">Image</sys:String>
+    <sys:String x:Key="lblZona">Zone</sys:String>
+    <sys:String x:Key="lblConoc">knowledge</sys:String>
+    <sys:String x:Key="lblObservaciones">observations</sys:String>
+    <sys:String x:Key="lblMañana">Morning</sys:String>
+    <sys:String x:Key="lblTarde">Evening</sys:String>
+    <sys:String x:Key="lblCompleto">Complete</sys:String>
+
+
+    <sys:String x:Key="lblSocios">partners</sys:String>
+    <sys:String x:Key="lblAnadirSocio">Add partner</sys:String>
+    <sys:String x:Key="lblEliminarSocio">Delete partner</sys:String>
+    <sys:String x:Key="lblModificarSocio">Edit partner</sys:String>
+
+    <sys:String x:Key="lblAportacion">Input(€)</sys:String>
+    <sys:String x:Key="lblCuenta">Bank account</sys:String>
+    <sys:String x:Key="lblforma_pago">Way to pay</sys:String>
+    <sys:String x:Key="lblEntrada">Incorporation date</sys:String>
+
+    <sys:String x:Key="lblConfirmar">Confirm</sys:String>
+
+    <sys:String x:Key="titAvisos">Notices</sys:String>
+    <sys:String x:Key="lblAnadirAviso">Add notice</sys:String>
+    <sys:String x:Key="lblEliminarAviso">Delete notice</sys:String>
+    <sys:String x:Key="lblModificarAviso">Edit notice</sys:String>
+
+    <sys:String x:Key="lblIdAviso">Id</sys:String>
+    <sys:String x:Key="lblRaza">Race</sys:String>
+    <sys:String x:Key="lblPeso">Weight</sys:String>
+    <sys:String x:Key="lblSexo">Sex</sys:String>
+    <sys:String x:Key="lblDescripcion">Description</sys:String>
+    <sys:String x:Key="lblPerdida">Date of disappearance</sys:String>
+    <sys:String x:Key="lblZonaPerdida">Last seen in</sys:String>
+    
+    <sys:String x:Key="lblExtra">Extra information</sys:String>
+
+    <sys:String x:Key="lblSi">Yes</sys:String>
+    <sys:String x:Key="lblNo">No</sys:String>
+
+    <sys:String x:Key="lblMacho">Male</sys:String>
+    <sys:String x:Key="lblHembra">Female</sys:String>
+
+    <sys:String x:Key="lblAñadirPerro">Add dog</sys:String>
+    <sys:String x:Key="lblEliminarPerro">Delete dog</sys:String>
+    <sys:String x:Key="lblEditarPerro">Edit dog</sys:String>
+
+
+    <sys:String x:Key="lblEdad">Age</sys:String>
+    <sys:String x:Key="lblPadrino">Godfather</sys:String>
+    <sys:String x:Key="lblTipo">Type</sys:String>
+    <sys:String x:Key="lblChip">Chip</sys:String>
+    <sys:String x:Key="lblPPP">PPP(potentially dangerous dog)</sys:String>
+    <sys:String x:Key="lblVacunado">Vaccinated</sys:String>
+    <sys:String x:Key="lblEsterilizado">Sterilized</sys:String>
+    <sys:String x:Key="lblEnfermedad">Diseases and / or treatments</sys:String>
+    
+    
+    <sys:String x:Key="lblEstado">Status</sys:String>
+
+    <sys:String x:Key="lblAdoptado">adopted</sys:String>
+    <sys:String x:Key="lblReservado">reserved</sys:String>
+    <sys:String x:Key="lblCuarentena">quarantine</sys:String>
+    <sys:String x:Key="lblDisponible">available</sys:String>
+    <sys:String x:Key="lblFallecido">dead</sys:String>
+
+    <sys:String x:Key="lblAdulto">Adult</sys:String>
+    <sys:String x:Key="lblCachorro">Puppy</sys:String>
+
+    <sys:String x:Key="lblTituloPadrino">GODFATHER CARD</sys:String>
+    <sys:String x:Key="lblDireccion">address</sys:String>
+    <sys:String x:Key="lblEntradaPadrino">sponsor since</sys:String>
+
+
+    <sys:String x:Key="lblNoPadrino">This dog is not sponsored</sys:String>
+
+
+
+</ResourceDictionary>

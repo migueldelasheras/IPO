@@ -1,0 +1,707 @@
+﻿<Window x:Class="Protectora.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Protectora"
+        mc:Ignorable="d"
+        Title="Menu" Height="700" Width="1100" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="368*"/>
+            <RowDefinition Height="27*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="655*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" 
+                Background="{x:Null}" BorderThickness="0" Margin="10,0,0,0" Cursor="Hand" Width="24"
+                ToolTip="{DynamicResource toolAjustes}">
+            <Image Source="imagenes/ajustes.png" Stretch="Uniform" />
+        </Button>
+        <Button x:Name="btnAyuda" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Cursor="Hand"
+                Width="24" BorderThickness="0" Margin="50,0,0,0" Background="{x:Null}"
+                ToolTip="{DynamicResource toolAyuda}" Click="btnAyuda_Click" >
+            <Image Source="imagenes/ayuda.png" Stretch="Uniform"/>
+        </Button>
+        <StackPanel x:Name="stUsuario" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" 
+                    HorizontalAlignment="Left" Height="358" 
+                    Margin="10,10,10,0" Width="124"
+                    Orientation="Vertical" >
+            <Image Source="imagenes/usuario.jpg" />
+            <Label Content="{DynamicResource lblNombre}"  Foreground="Gray"/>
+            <Label Content="Admin"  />
+            <Label Content="{DynamicResource lblApellido}"  Foreground="Gray"/>
+            <Label Content="Admin"  />
+            <Label Content="{DynamicResource lblContacto}"  Foreground="Gray"/>
+            <Label Content="admin@alu.uclm.es"  />
+            <Label Content="{DynamicResource lblAcceso}"  Foreground="Gray"/>
+            <Label Content="04/01/2022 12:54" />
+
+
+        </StackPanel>
+
+        <TabControl x:Name="tbPrincipal" Grid.Column="1" Grid.RowSpan="3" 
+                    Background="LightBlue" Grid.Row="0" ScrollViewer.CanContentScroll="True" >
+            <TabItem Header="{DynamicResource tPerros}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="407*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="83*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"
+                                HorizontalAlignment="left" Width="594" Grid.ColumnSpan="2">
+
+                        <Button x:Name="btnAnadirPerro" Margin="20,20,20,0" 
+                                Cursor="Hand" Click="btnAnadirPerro_Click" ToolTip="{DynamicResource toolAñadir}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/add.png" Margin="1"
+                                       x:Name="imagAñadirPerro"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblAñadirPerro}"
+                                       x:Name="lblAñadirPerro"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnEliminarPerro" Margin="0,20,20,0" 
+                                Cursor="Hand" Click="btnEliminarPerro_Click" ToolTip="{DynamicResource toolEliminar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/delete.png" Margin="1"
+                                       x:Name="imagEliminarPerro"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblEliminarPerro}"
+                                       x:Name="lblEliminarPerro"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnModificarPerro" Margin="0,20,0,0" 
+                                Cursor="Hand" Click="btnModificarPerro_Click" ToolTip="{DynamicResource toolEditar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/edit.png" Margin="1"
+                                       x:Name="imagEditarPerro"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblEditarPerro}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblEditarPerro"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                 HorizontalAlignment="Center" Margin="48,0,10,0" Width="349">
+                        <TextBox x:Name="txtBuscarPerro" TextWrapping="NoWrap"
+                                 Text="{DynamicResource txtBuscar}" IsReadOnly="True"
+                                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
+                        <Image Source="imagenes/buscar.png" HorizontalAlignment="Right" Margin="0,38,0,0" Width="14"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dgPerros" Grid.Row="2" Grid.Column="0"
+                              Grid.ColumnSpan="1" Margin="10" IsReadOnly="True"
+                              ItemsSource="{Binding}" 
+                              HorizontalAlignment="Stretch"
+                              AutoGenerateColumns="False" HorizontalScrollBarVisibility="Visible" 
+                              VerticalScrollBarVisibility="Visible" FontSize="17" IsTextSearchEnabled="True" SelectedIndex="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblRaza}" Binding="{Binding raza}"/>
+                            <DataGridTemplateColumn Header="{DynamicResource lblImagen}" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding imagen}" Width="90" Height="90" Stretch="Fill"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1" Grid.Column="2" Background="#FFF0F0F0" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="157*"/>
+                            <RowDefinition Height="210*"/>
+                            <RowDefinition Height="168*"/>
+                            <RowDefinition Height="31*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="194*"/>
+                            <ColumnDefinition Width="193*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="imagenPerro" Source="{Binding ElementName=dgPerros,Path=SelectedItem.imagen}" 
+                               Grid.Row="0" Margin="10"
+                               Stretch="UniformToFill"/>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0"
+                                    Margin="10,32,10,47" >
+                            <Label Name="lblImagenPerro" Content="{DynamicResource lblImagen}" Grid.Row="0"
+                               Visibility="Hidden"/>
+                            <TextBox x:Name="txtAnadirImgPerro" Grid.Row="0" Grid.Column="0" 
+                                 Visibility="Hidden" Text="{Binding ElementName=dgPerros,Path=SelectedItem.imagen}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1"
+                                    Margin="10,10,10,2">
+                            <Label Content="{DynamicResource lblEstado}" FontWeight="Bold" />
+                            <ComboBox x:Name="cbEstado" IsEnabled="False" 
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.estado}">
+                                <ComboBoxItem Content="{DynamicResource lblAdoptado}"/>
+                                <ComboBoxItem Content="{DynamicResource lblReservado}"/>
+                                <ComboBoxItem Content="{DynamicResource lblCuarentena}"/>
+                                <ComboBoxItem Content="{DynamicResource lblDisponible}"/>
+                                <ComboBoxItem Content="{DynamicResource lblFallecido}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblNombre}" FontWeight="Bold" />
+                            <TextBox x:Name="lblNombrePerro" Text="{Binding ElementName=dgPerros,Path=SelectedItem.nombre}" IsReadOnly="True"/>
+
+                            <Label Content="{DynamicResource lblEntrada}" FontWeight="Bold"/>
+                            <DatePicker SelectedDate="{Binding ElementName=dgPerros,Path=SelectedItem.entrada}"
+                                        x:Name="txtFechaPerro" IsEnabled="False"/>
+
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical"  
+                                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"
+                                    Margin="10,10,0,10" CanVerticallyScroll="True" Grid.RowSpan="3" >
+                            <Label Content="{DynamicResource lblChip}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblchipPerro" Text="{Binding ElementName=dgPerros,Path=SelectedItem.chip}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblSexo}" FontWeight="Bold"/>
+                            <ComboBox x:Name="cbGeneroPerro" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.sexo}">
+                                <ComboBoxItem Content="{DynamicResource lblMacho}" />
+                                <ComboBoxItem Content="{DynamicResource lblHembra}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblTipo}" FontWeight="Bold"/>
+                            <ComboBox x:Name="cbTipoPerro" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.tipo}">
+                                <ComboBoxItem Content="{DynamicResource lblCachorro}" />
+                                <ComboBoxItem Content="{DynamicResource lblAdulto}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblPeso}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblpesoPerro" Text="{Binding ElementName=dgPerros,Path=SelectedItem.peso}" IsReadOnly="True"/>
+
+
+
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="1" Grid.Column="1"
+                                    Grid.ColumnSpan="1" Grid.RowSpan="3" >
+                            <Label Content="{DynamicResource lblRaza}" FontWeight="Bold" />
+                            <TextBox x:Name="lblRazaPerro" Text="{Binding ElementName=dgPerros,Path=SelectedItem.raza}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblPPP}" FontWeight="Bold"/>
+                            <ComboBox x:Name="cbPPP" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.ppp}">
+                                <ComboBoxItem Content="{DynamicResource lblNo}" />
+                                <ComboBoxItem Content="{DynamicResource lblSi}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblVacunado}" FontWeight="Bold" />
+                            <ComboBox x:Name="cbVacunado" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.vacunado}">
+                                <ComboBoxItem Content="{DynamicResource lblNo}" />
+                                <ComboBoxItem Content="{DynamicResource lblSi}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblEsterilizado}" FontWeight="Bold" />
+                            <ComboBox x:Name="cbEsterilizado" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgPerros,Path=SelectedItem.esterilizado}">
+                                <ComboBoxItem Content="{DynamicResource lblNo}" />
+                                <ComboBoxItem Content="{DynamicResource lblSi}"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Grid.Row="2"  
+                                    Grid.ColumnSpan="2" Grid.RowSpan="2">
+                            <Label Content="{DynamicResource lblDescripcion}" FontWeight="Bold" />
+                            <TextBox x:Name="lblDescripcionPerro" 
+                                     Text="{Binding ElementName=dgPerros,Path=SelectedItem.descripcion}" 
+                                     IsReadOnly="True" Height="54" TextWrapping="Wrap" />
+                            <Label Content="{DynamicResource lblEnfermedad}" FontWeight="Bold" />
+                            <TextBox x:Name="lblEnfermedadPerro" 
+                                     Text="{Binding ElementName=dgPerros,Path=SelectedItem.enfermedad}" 
+                                     IsReadOnly="True" Height="54" TextWrapping="Wrap" />
+
+                        </StackPanel>
+                        <Button x:Name="btnPadrinoPerro" Content="{DynamicResource lblPadrino}" 
+                                Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="2" Cursor="Hand"
+                                Visibility="Visible" Click="btnPadrinoPerro_Click"
+                                ToolTip="{DynamicResource toolPadrino}"/>
+
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+
+            <TabItem Header="{DynamicResource tVoluntarios}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="407*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="83*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"
+                                HorizontalAlignment="left" Width="594" Grid.ColumnSpan="2">
+
+                        <Button x:Name="btnAnadirVolunt" Margin="20,20,20,0" 
+                                Click="btnAnadirVolunt_Click" Cursor="Hand" ToolTip="{DynamicResource toolAñadir}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/add.png" Margin="1"
+                                       x:Name="imagAñadirVoluntario"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblAnadir}"
+                                       x:Name="lblAñadirVoluntario"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnEliminarVolunt" Margin="0,20,20,0" 
+                                Click="btnEliminarVolunt_Click" Cursor="Hand" ToolTip="{DynamicResource toolEliminar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/delete.png" Margin="1"
+                                       x:Name="imagEliminarVoluntario"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblEliminar}"
+                                       x:Name="lblEliminarVoluntario"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnModificarVolunt" Margin="0,20,0,0" 
+                                Click="btnModificarVolunt_Click" Cursor="Hand" ToolTip="{DynamicResource toolEditar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/edit.png" Margin="1"
+                                       x:Name="imagEditarVoluntario"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblModificar}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblEditarVoluntario"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                 HorizontalAlignment="Center" Margin="48,0,10,0" Width="349">
+                        <TextBox x:Name="txtBuscar" TextWrapping="NoWrap"
+                                 Text="{DynamicResource txtBuscar}" IsReadOnly="True"
+                                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
+                        <Image Source="imagenes/buscar.png" HorizontalAlignment="Right" Margin="0,38,0,0" Width="14"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dgVoluntarios" Grid.Row="2" Grid.Column="0"
+                              Grid.ColumnSpan="1" Margin="10" IsReadOnly="True"
+                              ItemsSource="{Binding}" 
+                              HorizontalAlignment="Stretch"
+                              AutoGenerateColumns="False" HorizontalScrollBarVisibility="Visible" 
+                              VerticalScrollBarVisibility="Visible" FontSize="17" IsTextSearchEnabled="True" SelectedIndex="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="DNI" Binding="{Binding dni}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblNombre}" Binding="{Binding nombre}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblTlf}" Binding="{Binding tlf}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblCorreo}" Binding="{Binding correo}"/>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1" Grid.Column="2" Background="#FFF0F0F0" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="184*"/>
+                            <RowDefinition Height="381*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="194*"/>
+                            <ColumnDefinition Width="193*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="imagenVoluntario" Source="{Binding ElementName=dgVoluntarios,Path=SelectedItem.imagen}" 
+                               Grid.Row="0" Margin="10"
+                               Stretch="UniformToFill"/>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0"
+                                    Margin="10,32,10,47" >
+                            <Label Name="lblImagenVoluntario" Content="{DynamicResource lblImagen}" Grid.Row="0"
+                               Visibility="Hidden"/>
+                            <TextBox x:Name="txtAnadirImgVoluntario" Grid.Row="0" Grid.Column="0" 
+                                 Visibility="Hidden" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.imagen}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1"
+                                    Margin="10">
+                            <Label Content="dni" FontWeight="Bold" />
+                            <TextBox x:Name="lbldni" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.dni}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblNombre}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblNombre" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.nombre}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblTlf}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblTlf" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.tlf}" IsReadOnly="True"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical"  
+                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Margin="10">
+                            <Label Content="{DynamicResource lblCorreo}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblCorreo" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.correo}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblHorario}" FontWeight="Bold"/>
+
+                            <ComboBox x:Name="lblHorario" SelectedIndex="{Binding ElementName=dgVoluntarios,Path=SelectedItem.horario}" 
+                                      HorizontalAlignment="Left" Width="367" IsEnabled="False">
+                                <ComboBoxItem Content="{DynamicResource lblMañana}"/>
+                                <ComboBoxItem Content="{DynamicResource lblTarde}"/>
+                                <ComboBoxItem Content="{DynamicResource lblCompleto}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblZona}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblZona" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.zona}" IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblConoc}" FontWeight="Bold"/>
+
+                            <ComboBox x:Name="lblConoc" SelectedIndex="{Binding ElementName=dgVoluntarios,Path=SelectedItem.conocimientos}" IsEnabled="False">
+                                <ComboBoxItem Content="{DynamicResource lblSi}"/>
+                                <ComboBoxItem Content="{DynamicResource lblNo}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblObservaciones}" FontWeight="Bold"/>
+                            <TextBox x:Name="lblObservaciones" Text="{Binding ElementName=dgVoluntarios,Path=SelectedItem.observaciones}" 
+                                    IsReadOnly="True" Height="153" TextWrapping="Wrap"
+                                   />
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{DynamicResource lblSocios}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="407*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="83*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"
+                                HorizontalAlignment="left" Width="594" Grid.ColumnSpan="2">
+
+                        <Button x:Name="btnAnadirSocio" Margin="20,20,20,0" 
+                                Click="btnAnadirSocio_Click" Cursor="Hand" ToolTip="{DynamicResource toolAñadir}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/add.png" Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                                       x:Name="imagAñadirSocio"/>
+                                <Label Content="{DynamicResource lblAnadirSocio}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblAñadirSocio"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnEliminarSocio" Margin="0,20,20,0"
+                                Cursor="Hand" Click="btnEliminarSocio_Click" ToolTip="{DynamicResource toolEliminar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/delete.png" Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                                       x:Name="imagEliminarSocio"/>
+                                <Label Content="{DynamicResource lblEliminarSocio}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblEliminarSocio"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnModificarSocio" Margin="0,20,0,0" 
+                                Click="btnModificarSocio_Click" Cursor="Hand" ToolTip="{DynamicResource toolEditar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image x:Name="imgeditarSocio" Source="imagenes/edit.png" 
+                                       Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblModificarSocio}"
+                                       x:Name="lbleditarSocio"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                 HorizontalAlignment="Center" Margin="48,0,10,0" Width="349">
+                        <TextBox x:Name="txtBuscarSocio" TextWrapping="NoWrap"
+                                 Text="{DynamicResource txtBuscar}" IsReadOnly="True"
+                                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
+                        <Image Source="imagenes/buscar.png" HorizontalAlignment="Right" Margin="0,38,0,0" Width="14"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dgSocios" Grid.Row="2" Grid.Column="0"
+                              Grid.ColumnSpan="1" Margin="10" IsReadOnly="True"
+                              ItemsSource="{Binding}"
+                              HorizontalAlignment="Stretch"
+                              AutoGenerateColumns="False" HorizontalScrollBarVisibility="Visible" 
+                              VerticalScrollBarVisibility="Visible" FontSize="17" IsTextSearchEnabled="True" SelectedIndex="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="DNI" Binding="{Binding dni}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblNombre}" Binding="{Binding nombre}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblCorreo}" Binding="{Binding correo}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblAportacion}" Binding="{Binding aportacion}"/>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1" Grid.Column="2" Background="#FFF0F0F0" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="184*"/>
+                            <RowDefinition Height="381*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="194*"/>
+                            <ColumnDefinition Width="193*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="imagenSocio" Source="{Binding ElementName=dgSocios,Path=SelectedItem.imagen}" 
+                               Grid.Row="0" Margin="10"
+                               Stretch="UniformToFill"/>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0"
+                                    Margin="10,32,10,47" >
+                            <Label Name="lblImagenSocio" Content="{DynamicResource lblImagen}" Grid.Row="0"
+                               Visibility="Hidden"/>
+                            <TextBox x:Name="txtAnadirImgSocio" Grid.Row="0" Grid.Column="0" 
+                                 Visibility="Hidden" Text="{Binding ElementName=dgSocios,Path=SelectedItem.imagen}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1"
+                                    Margin="10">
+                            <Label Content="{DynamicResource lblNombre}" FontWeight="Bold" />
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.nombre}" 
+                                     IsReadOnly="True" x:Name="txtNombreSocio"/>
+                            <Label Content="DNI" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.dni}" 
+                                     IsReadOnly="True" x:Name="txtdniSocio"/>
+                            <Label Content="{DynamicResource lblTlf}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.tlf}" 
+                                     IsReadOnly="True" x:Name="txttlfSocio"/>
+
+
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical"  
+                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Margin="10">
+                            <Label Content="{DynamicResource lblCorreo}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.correo}" 
+                                     IsReadOnly="True" x:Name="txtCorreoSocio"/>
+                            <Label Content="{DynamicResource lblAportacion}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.aportacion}" 
+                                     IsReadOnly="True" x:Name="txtAportacionSocio"/>
+                            <Label Content="{DynamicResource lblCuenta}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.cuenta}" 
+                                     IsReadOnly="True" x:Name="txtCuentaSocio"/>
+                            <Label Content="{DynamicResource lblforma_pago}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgSocios,Path=SelectedItem.forma_pago}" 
+                                     IsReadOnly="True" x:Name="txtPagoSocio"/>
+                            <Label Content="{DynamicResource lblEntrada}" FontWeight="Bold"/>
+                            <DatePicker x:Name="txtEntradaSocio" IsEnabled="false" 
+                                        SelectedDate="{Binding ElementName=dgSocios,Path=SelectedItem.entrada}"/>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="{DynamicResource titAvisos}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="490*"/>
+                        <ColumnDefinition Width="407*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="83*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"
+                                HorizontalAlignment="left" Width="594" Grid.ColumnSpan="2">
+
+                        <Button x:Name="btnAnadirAviso" Margin="20,20,20,0" 
+                                 Cursor="Hand" Click="btnAnadirAviso_Click" ToolTip="{DynamicResource toolAñadir}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/add.png" Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                                       x:Name="imagAñadirAviso"/>
+                                <Label Content="{DynamicResource lblAnadirAviso}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblAñadirAviso"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnEliminarAviso" Margin="0,20,20,0"
+                                Cursor="Hand" Click="btnEliminarAviso_Click" ToolTip="{DynamicResource toolEliminar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="imagenes/delete.png" Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                                       x:Name="imagEliminarAviso"/>
+                                <Label Content="{DynamicResource lblEliminarAviso}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       x:Name="lblEliminarAviso"
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="btnModificarAviso" Margin="0,20,0,0" 
+                                 Cursor="Hand" Click="btnModificarAviso_Click" ToolTip="{DynamicResource toolEditar}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image x:Name="imgeditarAviso" Source="imagenes/edit.png" 
+                                       Margin="1"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Label Content="{DynamicResource lblModificarAviso}"
+                                       x:Name="lbleditarAviso"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       
+                                       Margin="0,0,10,0"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                                 HorizontalAlignment="Center" Margin="48,0,10,0" Width="349">
+                        <TextBox x:Name="txtBuscarAviso" TextWrapping="NoWrap"
+                                 Text="{DynamicResource txtBuscar}" IsReadOnly="True"
+                                 HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300"/>
+                        <Image Source="imagenes/buscar.png" HorizontalAlignment="Right" Margin="0,38,0,0" Width="14"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dgAvisos" Grid.Row="2" Grid.Column="0"
+                              Grid.ColumnSpan="1" Margin="10" IsReadOnly="True"
+                              ItemsSource="{Binding}"
+                              HorizontalAlignment="Stretch"
+                              AutoGenerateColumns="False" HorizontalScrollBarVisibility="Visible" 
+                              VerticalScrollBarVisibility="Visible" FontSize="17" IsTextSearchEnabled="True" SelectedIndex="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{DynamicResource lblIdAviso}" Binding="{Binding id}"/>
+                            <DataGridTextColumn Header="{DynamicResource lblRaza}" Binding="{Binding raza}"/>
+                            <DataGridTemplateColumn Header="{DynamicResource lblImagen}" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding imagen}" Width="90" Height="90" Stretch="Fill"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="1" Grid.Column="2" Background="#FFF0F0F0" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="184*"/>
+                            <RowDefinition Height="381*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="194*"/>
+                            <ColumnDefinition Width="193*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="imagenAviso" Source="{Binding ElementName=dgAvisos,Path=SelectedItem.imagen}" 
+                               Grid.Row="0" Margin="10"
+                               Stretch="UniformToFill"/>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0"
+                                    Margin="10,32,10,47" >
+                            <Label Name="lblImagenAviso" Content="{DynamicResource lblImagen}" Grid.Row="0"
+                               Visibility="Hidden"/>
+                            <TextBox x:Name="txtAnadirImgAviso" Grid.Row="0" Grid.Column="0" 
+                                 Visibility="Hidden" Text="{Binding ElementName=dgAvisos,Path=SelectedItem.imagen}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1"
+                                    Margin="10">
+                            <Label Content="{DynamicResource lblRaza}" FontWeight="Bold"/>
+                            <TextBox x:Name="txtAvisoRaza" Text="{Binding ElementName=dgAvisos,Path=SelectedItem.raza}"
+                                     IsReadOnly="True"/>
+                            <Label Content="{DynamicResource lblSexo}" FontWeight="Bold"/>
+                            <ComboBox x:Name="cbGenero" IsReadOnly="True" IsEnabled="False"
+                                      SelectedIndex="{Binding ElementName=dgAvisos,Path=SelectedItem.sexo}">
+                                <ComboBoxItem Content="{DynamicResource lblMacho}" />
+                                <ComboBoxItem Content="{DynamicResource lblHembra}"/>
+                            </ComboBox>
+                            <Label Content="{DynamicResource lblContacto}" FontWeight="Bold"/>
+                            <TextBox x:Name="txtAvisoContacto" Text="{Binding ElementName=dgAvisos,Path=SelectedItem.contacto}"
+                                     IsReadOnly="True"/>
+
+
+
+
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical"  
+                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Margin="10">
+                            <Label Content="{DynamicResource lblNombre}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgAvisos,Path=SelectedItem.nombre}" 
+                                     IsReadOnly="True" x:Name="txtAvisoNombre"/>
+                            <Label Content="{DynamicResource lblPeso}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgAvisos,Path=SelectedItem.peso}" 
+                                     IsReadOnly="True" x:Name="txtAvisoPeso" MaxLength="3" />
+                            <Label Content="{DynamicResource lblDescripcion}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgAvisos,Path=SelectedItem.descripcion}" 
+                                     IsReadOnly="True" x:Name="txtAvisoDescripcion" Height="57"/>
+                            <Label Content="{DynamicResource lblPerdida}" FontWeight="Bold"/>
+                            <DatePicker SelectedDate="{Binding ElementName=dgAvisos,Path=SelectedItem.fecha}"
+                                        x:Name="txtAvisoFecha" IsEnabled="False"/>
+                            <Label Content="{DynamicResource lblZonaPerdida}" FontWeight="Bold"/>
+                            <TextBox Text="{Binding ElementName=dgAvisos,Path=SelectedItem.zona}" 
+                                     IsReadOnly="True" x:Name="txtAvisoZona"/>
+                            <Label Content="{DynamicResource lblExtra}" FontWeight="Bold"/>
+                            <TextBox x:Name="txtAvioExtra" Text="{Binding ElementName=dgAvisos,Path=SelectedItem.extra}"
+                                     IsReadOnly="true" Height="49"/>
+
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Button Name="btnSalir" Grid.Row="2" HorizontalAlignment="Left" Margin="10,5,0,5"
+                HorizontalContentAlignment="Center" Width="37"
+                Cursor="Hand" Click="btnSalir_Click" ToolTip="{DynamicResource toolSalir}">
+            <Image Source="imagenes/salir.png"/>
+            
+        </Button>
+        
+        <Button Name="btnCambiar" Grid.Row="2" HorizontalAlignment="Center" Margin="60,5,5,5"
+                HorizontalContentAlignment="Center" Width="132"
+                Cursor="Hand"  Content="{DynamicResource lblCambiarUsuario}" Click="btnCambiar_Click">
+
+        </Button>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Avisos>
+	<Aviso id="1" raza="Husky" imagen="imagenes/golfo.jpg" nombre="Golfo" sexo="0" 
+		   peso="22" descripcion="Macho adulto de unos 22 kg de peso con collar rojo"
+		   fecha="03/07/2021" zona="Albacete" contacto="658421532" extra="Tiene ojos azules"/>
+	<Aviso id="2" raza="Labrador" imagen="imagenes/kira.jpg" nombre="Kira" sexo="1" 
+		   peso="25" descripcion="Hembra adulta de unos 25 kg con collar verde"
+		   fecha="29/03/2020" zona="Toledo" contacto="698784221" extra="Ninguno"/>
+	<Aviso id="3" raza="Pasto Alemán" imagen="imagenes/odin.jpg" nombre="Odin" sexo="0" 
+		   peso="35" descripcion="Macho adulto de unos 35 kg de peso con collar negro"
+		   fecha="08/08/2021" zona="Cuenca" contacto="653154225" extra="Es un perro muy sociable y tiene unas manchas en el vientre"/>
+</Avisos>

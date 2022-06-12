@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Padrinos>
+	
+	<Padrino id="1" dni="04687529O" nombre="Jorge Camacho" perro="Coco" tlf="684152378" 
+			 direccion="C/ Calatrava 2,19" cuenta="ES9600115769676912508945" forma_pago="transferencia"
+			 aportacion="150" entrada="04/01/2021" imagen="imagenes/padrino1.jpg"/>
+	
+	<Padrino id="2" dni="08794521U" nombre="Sara Ruiz" perro="Nala" tlf="674120580" 
+			 direccion="C/ San José 29,1" cuenta="ES2400784026563358699725" forma_pago="transferencia"
+			 aportacion="50" entrada="21/05/2020" imagen="imagenes/padrino2.jpg"/>
+	
+	<Padrino id="3" dni="01234567P" nombre="Alba perez" perro="Max" tlf="922445776" 
+			 direccion="C/ Andalucia 34" cuenta="ES9401282952306093339322" forma_pago="transferencia"
+			 aportacion="200" entrada="03/08/2021" imagen="imagenes/padrino3.jpg"/>
+</Padrinos>

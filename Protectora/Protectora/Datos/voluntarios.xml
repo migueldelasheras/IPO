@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Voluntarios>
+	<Voluntario dni="05795521R" nombre="Juan Alberto" tlf="659456125" correo="juanAl@gmail.com"
+				imagen="imagenes/juanAl.png" horario="0" zona="Ciudad Real" 
+				conocimientos="0" observaciones="Es muy trabajador"/>
+	<Voluntario dni="06364845L" nombre="Alvaro Perez" tlf="689412056" correo="alvaro@gmail.com"
+				imagen="imagenes/alvaro.jpg" horario="2" zona="Madrid"
+				conocimientos="1" observaciones="Gran trabajador en equipo"/>
+</Voluntarios>

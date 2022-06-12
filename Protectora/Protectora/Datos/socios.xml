@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Socios>
+	
+	<Socio dni="05442544W" nombre="Jaime Portillo" correo="jaime@gmail.com" tlf="926445778" 
+		   imagen="imagenes/jaime.jpg" cuenta="ES3131831604011328664160" 
+		   aportacion="300" forma_pago="transferencia" entrada="21/03/2019" />
+	
+	<Socio dni="08941445N" nombre="Lucas Hernandez" correo="lucashd@gmail.com" tlf="842395721"
+		   imagen="imagenes/lucas.jpg" cuenta="ES5514905019490257613936"
+		   aportacion="50" forma_pago="transferencia" entrada="03/08/2021" />
+	
+	<Socio dni="02457983M" nombre="Javier Gomez" correo="javier@gmail.com" tlf="678451239"
+		   imagen="imagenes/javier.jpg" cuenta="ES6814904311790245630399"
+		   aportacion="200" forma_pago="bizum" entrada="29/07/2020" />
+
+	<Socio dni="06842354P" nombre="Marcos Torres" correo="marcos@gmail.com" tlf="694153444"
+		   imagen="imagenes/marcos.jpg" cuenta="ES8502352102317244262647"
+		   aportacion="100" forma_pago="transferencia" entrada="12/03/2021" />
+</Socios>

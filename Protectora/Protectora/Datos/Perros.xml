@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Perros>
+	<Perro id="1" nombre="Coco" imagen="imagenes/chow.jpg" raza="Chow chow" sexo="0" 
+		   edad="4" padrino="1"
+		   tipo="1" peso="28" entrada="13/05/2021" chip="1527" ppp="0" vacunado="0" esterilizado="1"
+		   descripcion="Es muy sociable con todo tipo de personas(incluido niños)." 
+		   enfermedad="Ninguna" estado="0" />
+	
+	<Perro id="2" nombre="Gala" imagen="imagenes/pomerania.jpg" raza="Pomerania" sexo="1" 
+		   edad="3" padrino="0"
+		   tipo="1" peso="3" entrada="15/09/2021" chip="3" ppp="0" vacunado="1" esterilizado="0"
+		   descripcion="Muy sociable con personas pero tiene problemas cuando se acerca a gatos" 
+		   enfermedad="Ninguna" estado="1" />
+	
+	<Perro id="3" nombre="Nala" imagen="imagenes/yorkshire.jpg" raza="Yorkshire terrier" 
+		   sexo="1" edad="4" padrino="2"
+		   tipo="1" peso="2" entrada="27/01/2020" chip="0" ppp="0" vacunado="0" esterilizado="1"
+		   descripcion="Es poco sociable por lo que hay que tener cuidado cuando se acerquen niños pequeños" 
+		   enfermedad="Gripe. No se está siguiendo ningún tratamiento" estado="2" />
+	
+	<Perro id="4" nombre="Max" imagen="imagenes/doberman.jpg" raza="Doberman" sexo="0" 
+		   edad="3" padrino="3"
+		   tipo="1" peso="42" entrada="25/05/2021" chip="98" ppp="1" vacunado="1" esterilizado="0"
+		   descripcion="Es bastante agresivo cuando se acercan otros perros pero con personas es muy sociable" 
+		   enfermedad="Ninguna" estado="3" />
+</Perros>

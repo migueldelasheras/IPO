@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Protectora.resources"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="lblTituloLogin">Iniciar sesión</sys:String>
+    <sys:String x:Key="lblUsuario">Usuario</sys:String>
+    <sys:String x:Key="lblContrasena">Contraseña</sys:String>
+    <sys:String x:Key="btnLogin">Iniciar sesión</sys:String>
+    <sys:String x:Key="lblOlvido">¿Olvidó su contraseña?</sys:String>
+    <sys:String x:Key="cbiEspaniol">ESP</sys:String>
+    <sys:String x:Key="cbiIngles">ING-UK</sys:String>
+    <sys:String x:Key="Gracias">Gracias por utilizar nuestra aplicación...</sys:String>
+    <sys:String x:Key="Despedida">Despedida</sys:String>
+    <sys:String x:Key="lblRecordar">Recordar</sys:String>
+    <sys:String x:Key="lblIncorrecto">Usuario o contraseña incorrectos</sys:String>
+    <sys:String x:Key="lblCambiarUsuario">Cambiar de usuario</sys:String>
+
+
+
+    <sys:String x:Key="tooltipIdioma">Selecciona un idioma para el menú</sys:String>
+    <sys:String x:Key="tooltipbtnLogin">Botón para iniciar sesión con el usuario seleccionado</sys:String>
+    <sys:String x:Key="toolContrasena">presiona para mostrar/ocultar contraseña</sys:String>
+    <sys:String x:Key="toolRecordar">presiona para recordar usuario y contraseña</sys:String>
+    
+    <sys:String x:Key="toolAñadir">Permite añadir nuevos items</sys:String>
+    <sys:String x:Key="toolEliminar">Permite eliminar items</sys:String>
+    <sys:String x:Key="toolEditar">Permite modificar items</sys:String>
+    <sys:String x:Key="toolPadrino">Muestra la información del padrino</sys:String>
+    <sys:String x:Key="toolAjustes">Muestra los ajustes de la aplicación(deshabilitado)</sys:String>
+    <sys:String x:Key="toolAyuda">Muestra información de ayuda</sys:String>
+    <sys:String x:Key="toolSalir">Pulsa para salir de la aplicación</sys:String>
+
+
+
+
+    <sys:String x:Key="lblNombre">Nombre</sys:String>
+    <sys:String x:Key="lblApellido">Apellidos</sys:String>
+    <sys:String x:Key="lblContacto">Contacto</sys:String>
+    <sys:String x:Key="lblAcceso">Último acceso</sys:String>
+
+    <sys:String x:Key="btnSalir">Salir</sys:String>
+
+    <sys:String x:Key="tPerros">Perros</sys:String>
+    <sys:String x:Key="tVoluntarios">Voluntarios</sys:String>
+    <sys:String x:Key="lblAnadir">Añadir voluntario</sys:String>
+    <sys:String x:Key="lblEliminar">Eliminar voluntario</sys:String>
+    <sys:String x:Key="lblModificar">Modificar voluntario</sys:String>
+    <sys:String x:Key="txtBuscar">Buscar por nombre</sys:String>
+
+    <sys:String x:Key="lblCorreo">Correo</sys:String>
+    <sys:String x:Key="lblTlf">Teléfono</sys:String>
+    <sys:String x:Key="lblHorario">Horario</sys:String>
+    <sys:String x:Key="lblImagen">Imagen</sys:String>
+    <sys:String x:Key="lblZona">Zona</sys:String>
+    <sys:String x:Key="lblConoc">Conocimientos</sys:String>
+    <sys:String x:Key="lblObservaciones">Observaciones</sys:String>
+    <sys:String x:Key="lblMañana">Mañana</sys:String>
+    <sys:String x:Key="lblTarde">Tarde</sys:String>
+    <sys:String x:Key="lblCompleto">Completo</sys:String>
+
+
+
+    <sys:String x:Key="lblSocios">Socios</sys:String>
+    <sys:String x:Key="lblAnadirSocio">Añadir Socio</sys:String>
+    <sys:String x:Key="lblEliminarSocio">Eliminar Socio</sys:String>
+    <sys:String x:Key="lblModificarSocio">Modificar Socio</sys:String>
+    
+    <sys:String x:Key="lblAportacion">Aportación(€)</sys:String>
+    <sys:String x:Key="lblCuenta">Cuenta bancaria</sys:String>
+    <sys:String x:Key="lblforma_pago">Forma de pago</sys:String>
+    <sys:String x:Key="lblEntrada">Fecha de incorporación</sys:String>
+
+
+    <sys:String x:Key="lblConfirmar">Confirmar</sys:String>
+
+    <sys:String x:Key="titAvisos">Avisos</sys:String>
+    <sys:String x:Key="lblAnadirAviso">Añadir aviso</sys:String>
+    <sys:String x:Key="lblEliminarAviso">Eliminar aviso</sys:String>
+    <sys:String x:Key="lblModificarAviso">Editar aviso</sys:String>
+
+    <sys:String x:Key="lblIdAviso">Id</sys:String>
+    <sys:String x:Key="lblRaza">Raza</sys:String>
+    <sys:String x:Key="lblPeso">Peso</sys:String>
+    <sys:String x:Key="lblSexo">Sexo</sys:String>
+    <sys:String x:Key="lblDescripcion">Descripción</sys:String>
+    <sys:String x:Key="lblPerdida">Fecha de la desaparición</sys:String>
+    <sys:String x:Key="lblZonaPerdida">Visto por última vez en</sys:String>
+    
+    <sys:String x:Key="lblExtra">Información extra</sys:String>
+
+    <sys:String x:Key="lblSi">Si</sys:String>
+    <sys:String x:Key="lblNo">No</sys:String>
+
+    <sys:String x:Key="lblMacho">Macho</sys:String>
+    <sys:String x:Key="lblHembra">Hembra</sys:String>
+
+
+    <sys:String x:Key="lblAñadirPerro">Añadir perro</sys:String>
+    <sys:String x:Key="lblEliminarPerro">Eliminar perro</sys:String>
+    <sys:String x:Key="lblEditarPerro">Editar perro</sys:String>
+    
+    
+    <sys:String x:Key="lblEdad">Edad</sys:String>
+    <sys:String x:Key="lblPadrino">Padrino</sys:String>
+    <sys:String x:Key="lblTipo">Tipo</sys:String>
+    <sys:String x:Key="lblChip">Chip</sys:String>
+    <sys:String x:Key="lblPPP">PPP(Perro potencialmente peligroso)</sys:String>
+    <sys:String x:Key="lblVacunado">Vacunado</sys:String>
+    <sys:String x:Key="lblEsterilizado">Esterilizado</sys:String>
+    <sys:String x:Key="lblEnfermedad">Efermedades y/o tratamientos</sys:String>
+    
+    
+    <sys:String x:Key="lblEstado">Estado</sys:String>
+    
+    <sys:String x:Key="lblAdoptado">Adoptado</sys:String>
+    <sys:String x:Key="lblReservado">Reservado</sys:String>
+    <sys:String x:Key="lblCuarentena">Curentena</sys:String>
+    <sys:String x:Key="lblDisponible">Disponible</sys:String>
+    <sys:String x:Key="lblFallecido">Fallecido</sys:String>
+
+    <sys:String x:Key="lblAdulto">Adulto</sys:String>
+    <sys:String x:Key="lblCachorro">Cachorro</sys:String>
+
+
+
+    <sys:String x:Key="lblTituloPadrino">CARNET DE PADRINO</sys:String>
+    <sys:String x:Key="lblDireccion">Dirección</sys:String>
+    <sys:String x:Key="lblEntradaPadrino">Apadrina desde</sys:String>
+
+
+
+    <sys:String x:Key="lblNoPadrino">Este perro no está apadrinado</sys:String>
+
+
+
+
+</ResourceDictionary>
